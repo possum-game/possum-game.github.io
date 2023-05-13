@@ -12,6 +12,11 @@
             user-select: none;
             overflow-x: hidden;
         }
+        body {
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: #888 transparent;
+        }
         .menu_button {
             display: block;
             background-size: 150%;
@@ -38,6 +43,11 @@
             width: 15%;
             /* position: fixed; */
             position: relative;
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .menu::-webkit-scrollbar { 
+            display: none;  /* Safari and Chrome */
         }
         ul {
             list-style-type: none;
@@ -100,6 +110,20 @@
             bottom: 10px;
             right: 10px;
         }
+        /* i hate google chrome */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
     </style>
     <title>POSSUMBLY THE BEST GAME EVER</title>
     <link rel="icon" type="image/x-icon" href="media/fav.png">
@@ -153,7 +177,7 @@
             <p style="text-indent: 25px;">I think the most interesting thing I discovered in my experimentation with Unity is definitely how easy it can be when you just do it. Obviously, that mentality doesn’t work for everyone (and I sort of cheated since I have experience with other languages), but overall it truly wasn’t that difficult as long as I stuck with it. I’ve met so many people throughout the years, who are both my peers and superiors, who say “How do you program? I could never do something like that!” and I say nonsense! Anyone can program, as long as you stay dedicated, and you don’t give up because you “don’t get it”.</p><br>\
             <p style="text-indent: 25px;">Conversely, I did have some struggles throughout my project. I waited until the very last minute to start, which resulted in some of my planned features being cut last minute. After feedback from Mock Exhibition, I had decided I wanted to add more levels, a level selector, and completely rewrite the physics engine, since those were (or at least were related to) the biggest complaints. However, because I waited, other, more urgent projects got in the way. This resulted in only ⅓ of my planned upgrades being realized. If I could change my process, or do my whole project again, the only thing I would change is my starting time. If I had just started earlier, I do think I could have had a more well rounded project overall.</p><br>\
             <p style="text-indent: 25px;">I think my biggest strength during this project was definitely my commitment. I often struggle with it, but this project absolutely captivated me while I worked on it. It definitely resulted in some exhaustion from the long hours I was pulling to work on it, but I wouldn’t trade it for anything else. My biggest challenge, though, was definitely time management. While I did work for long stretches of time on this project, they weren’t really healthfully spaced out, and I got a little burnt out towards the end.</p><br>\
-            <p style="text-indent: 25px;">Finally, I’d like to talk about what I’ve learned. To get the obvious things out of the way first: I learned Unity and the C# language. But perhaps less obviously, I learned a very valuable lesson about procrastination. This is the closest I’ve ever cut it, and it was really not that fun. I hope I can use my newfound knowledge to maybe get a job in tech, or even more specifically, game development. I’ve really liked programming in C# as well, so I hope I can start using it more outside of just games.</p></div>',
+            <p style="text-indent: 25px;">Finally, I’d like to talk about what I’ve learned. To get the obvious things out of the way first: I learned Unity and the C# language. But perhaps less obviously, I learned a very valuable lesson about procrastination. This is the closest I’ve ever cut it, and it was really not that fun. I hope I can use my newfound knowledge to maybe get a job in tech, or even more specifically, game development. I’ve really liked programming in C# as well, so I hope I can start using it more outside of just games.</p></div><br>',
         'download': '<div style="margin: 10px;"><h1 style="font-size:xx-large;">Download the Game (Windows 10+ only)</h1>\
             <br><div style="margin: 30px; margin-right: 30px;"><p><a class="sp_link" href="https://drive.google.com/file/d/1UArOGSWRGpCO0wBv1bTqxWhSDnOHjhOd/view?usp=sharing">Click here to download via Google Drive</a></p><br>\
             <p>to run:</p>\
