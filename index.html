@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            display: flex;
+            -webkit-user-select: none;
+            -ms-user-select: none; 
+            user-select: none;
+            overflow-x: hidden;
+        }
+        .menu_button {
+            display: block;
+            background-size: 150%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0,0,0,0.5);
+            border: 0px solid transparent;
+            width: 100%;
+            aspect-ratio: 3/1;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            transition: all 0.5s ease;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .menu_button:hover {
+            transform: scale(1.2);
+        }
+        .menu {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            margin: 0px;
+            margin-left: 0px;
+            height: 100%;
+            width: 15%;
+            /* position: fixed; */
+            position: relative;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        li a {
+            /* display: block; */
+            /* height: 25px; */
+            aspect-ratio: 3/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            font-size: xx-large;
+            font-weight: 100;
+        }
+        li a:hover {
+            background-color: #555;
+            color: white;
+        }
+        .active {
+            background-color: blueviolet;
+            color: white;
+        }
+        .active:hover {
+            background-color: blueviolet;
+            color: white;
+        }
+        .page_content {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin: 10px;
+        }
+        .sp_link {
+            color: blueviolet;
+        }
+        .sp_link:hover {
+            text-decoration: underline;
+        }
+        #rsz {
+            position: absolute;
+            right: 0;
+            width: 5px;
+            height: 100%;
+        }
+        #rsz:hover {
+            cursor: col-resize;
+        }
+        .half_d {
+            width: 45%;
+            float: left;
+            margin: 10px;
+        }
+        .attribution {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+    <title>POSSUMBLY THE BEST GAME EVER</title>
+    <link rel="icon" type="image/x-icon" href="media/fav.png">
+</head>
+<body>
+        <div class="menu" id="menu">
+            <div id="rsz"></div>
+            <ul>
+                <li><a id="home" class="active" href="javascript:nav_handler('home')">Home</a></li>
+                <li><a id="reflection" href="javascript:nav_handler('reflection')">Reflection</a></li>
+                <li><a id="download" href="javascript:nav_handler('download')">Download</a></li>
+                <li><a id="images" href="javascript:nav_handler('images')">Examples</a></li>
+            </ul> 
+        </div>
+        <div class="page_content" id="page_content" style="margin: 10px;">
+            <div style="margin: 10px;">
+                <h1 style="font-size:xx-large;">Home</h1>
+            </div>
+            <div style="margin: 30px;">
+                <p style="text-indent: 25px;">POSSUMBLY THE BEST GAME EVER is a platformer game featuring the main character, Jeremy (pronounced like "Germy") traversing through a series of challenging levels. Whether you want to race the clock to get the fastest time, or you want to battle all of the spiders and apple cores to get the highest score, you're bound to find something for you in this game.</p><br>
+                <p style="text-indent: 0px;">Reasons why POSSUMBLY THE BEST GAME EVER is the best game ever:</p>
+                <ul style="list-style-type: circle; margin-left: 50px;">
+                    <li><p>possums</p></li>
+                    <li><p>i made it</p></li>
+                    <li><p>very awesome and smooth animations</p></li>
+                    <li><p>challenging levels</p></li>
+                    <li><p>the spiders are Brazilian Wandering Spiders which are very dangerous and mean so its good that Jeremy is stomping them</p></li>
+                </ul> 
+            </div>
+        </div>
+        <div id="attribution" class="attribution"><a class="sp_link" href="https://possum-cc.github.io/">©poppy 2023</a></div>
+        
+</body>
+<script>
+    available_page_contents = {
+        'home': `<div style="margin: 10px;">
+                <h1 style="font-size:xx-large;">Home</h1>
+            </div>
+            <div style="margin: 30px;">
+                <p style="text-indent: 25px;">POSSUMBLY THE BEST GAME EVER is a platformer game featuring the main character, Jeremy (pronounced like "Germy") traversing through a series of challenging levels. Whether you want to race the clock to get the fastest time, or you want to battle all of the spiders and apple cores to get the highest score, you're bound to find something for you in this game.</p><br>
+                <p style="text-indent: 0px;">Reasons why POSSUMBLY THE BEST GAME EVER is the best game ever:</p>
+                <ul style="list-style-type: circle; margin-left: 50px;">
+                    <li><p>possums</p></li>
+                    <li><p>i made it</p></li>
+                    <li><p>very awesome and smooth animations</p></li>
+                    <li><p>challenging levels</p></li>
+                    <li><p>the spiders are Brazilian Wandering Spiders which are very dangerous and mean so its good that Jeremy is stomping them</p></li>
+                </ul> 
+            </div>`,
+        'reflection': '<div style="margin: 10px; margin-right: 30px;"><h1 style="font-size:xx-large;">Reflection</h1></div><div style="margin: 30px; margin-right: 30px;"><p style="text-indent: 25px;">My project is a simple platformer game, featuring a possum as the player. I love possums and programming, and so making this game as one of my first seemed like a no-brainer. When I started out, I had a few goals in mind. First, I wanted to get more comfortable with a game engine (this is how most modern developers make games, it cuts out having to write your own graphics library, among other things). When I began, I didn’t have a specific one in mind, but down the road I went with Unity, because it was both light on the development computer, and the end user’s. My second goal was to just make something. I’ve always really loved playing games, and always wanted to create them, but usually lacked the skills and motivation to do so. I made myself see this project as a true chance to finally just make anything, which I think resulted in not only a lot of motivation for myself, but also just a game that’s fun to play, in a sort of “silly goofy” way. I think I was very successful in  learning about game development. I went from having opened Unity once, only to get frightened and overwhelmed, to what I would say is a pretty solid comfort level with both the Unity editor itself, and C# language as well, which is the language you program Unity games in.</p><br>\
+            <p style="text-indent: 25px;">I think the most interesting thing I discovered in my experimentation with Unity is definitely how easy it can be when you just do it. Obviously, that mentality doesn’t work for everyone (and I sort of cheated since I have experience with other languages), but overall it truly wasn’t that difficult as long as I stuck with it. I’ve met so many people throughout the years, who are both my peers and superiors, who say “How do you program? I could never do something like that!” and I say nonsense! Anyone can program, as long as you stay dedicated, and you don’t give up because you “don’t get it”.</p><br>\
+            <p style="text-indent: 25px;">Conversely, I did have some struggles throughout my project. I waited until the very last minute to start, which resulted in some of my planned features being cut last minute. After feedback from Mock Exhibition, I had decided I wanted to add more levels, a level selector, and completely rewrite the physics engine, since those were (or at least were related to) the biggest complaints. However, because I waited, other, more urgent projects got in the way. This resulted in only ⅓ of my planned upgrades being realized. If I could change my process, or do my whole project again, the only thing I would change is my starting time. If I had just started earlier, I do think I could have had a more well rounded project overall.</p><br>\
+            <p style="text-indent: 25px;">I think my biggest strength during this project was definitely my commitment. I often struggle with it, but this project absolutely captivated me while I worked on it. It definitely resulted in some exhaustion from the long hours I was pulling to work on it, but I wouldn’t trade it for anything else. My biggest challenge, though, was definitely time management. While I did work for long stretches of time on this project, they weren’t really healthfully spaced out, and I got a little burnt out towards the end.</p><br>\
+            <p style="text-indent: 25px;">Finally, I’d like to talk about what I’ve learned. To get the obvious things out of the way first: I learned Unity and the C# language. But perhaps less obviously, I learned a very valuable lesson about procrastination. This is the closest I’ve ever cut it, and it was really not that fun. I hope I can use my newfound knowledge to maybe get a job in tech, or even more specifically, game development. I’ve really liked programming in C# as well, so I hope I can start using it more outside of just games.</p></div>',
+        'download': '<div style="margin: 10px;"><h1 style="font-size:xx-large;">Download the Game (Windows 10+ only)</h1>\
+            <br><div style="margin: 30px; margin-right: 30px;"><p><a class="sp_link" href="https://drive.google.com/file/d/1UArOGSWRGpCO0wBv1bTqxWhSDnOHjhOd/view?usp=sharing">Click here to download via Google Drive</a></p><br>\
+            <p>to run:</p>\
+            <ul style="list-style-type: circle; margin-left: 50px;">\
+            <li>unzip the folder (right click &gt; extract all)</li>\
+            <li>open <code class="language-plaintext highlighter-rouge">possumbly_the_best_game_ever.exe</code></li>\
+            </ul></div></div>',
+        'images': `<div style="margin: 10px; display: block;"><h1 style="font-size:xx-large;">Images and Videos</h1></div>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+        <div class=half_d><h1 style="font-size:x-large; margin-bottom: 5px;">Menu Screen</h1>
+        <img style="width: 100%;" src="media/menu.png"></div>
+        <div class=half_d><h1 style="font-size:x-large; margin-bottom: 5px;">Level 1</h1>
+        <img style="width: 100%;" src="media/level1.png"></div>
+        <div class=half_d><h1 style="font-size:x-large; margin-bottom: 5px;">Level 2</h1>
+        <img style="width: 100%;" src="media/level2.png"></div>
+        <div class=half_d><h1 style="font-size:x-large; margin-bottom: 5px;">Level 3</h1>
+        <img style="width: 100%;" src="media/level3.png"></div>
+        <div class=half_d><h1 style="font-size:x-large; margin-bottom: 5px;">Level 4</h1>
+        <img style="width: 100%;" src="media/level4.png"></div>
+        <div class=half_d><h1 style="font-size:x-large; margin-bottom: 5px;">Level 5</h1>
+        <img style="width: 100%;" src="media/level5.png"></div>
+        <div class=half_d><h1 style="font-size:x-large; margin-bottom: 5px;">Earliest development footage</h1>
+            <video width="100%" controls>
+                <source src="media/old_possum.mp4" type="video/mp4">
+                this video is not available in your browser.
+            </video><br></div>
+        <div class=half_d><h1 style="font-size:x-large; margin-bottom: 5px;">Modern gameplay footage</h1>
+        <video width="100%" controls>
+            <source src="media/modern_possum.mp4" type="video/mp4">
+            this video is not available in your browser.
+        </video><br></div>
+    </div>`
+    }
+    var c_page = document.getElementById('home')
+    function nav_handler(button_pressed) {
+        var new_page = document.getElementById(button_pressed)
+        c_page.classList.remove('active')
+        new_page.classList.add('active');
+        c_page = new_page
+        document.getElementById('page_content').innerHTML = available_page_contents[new_page.id]
+    }
+</script>
+<script>
+    class Resizehandler {
+        constructor(targetDivID, pullTabID) {
+            var d = document;
+            var pullTab = d.getElementById(pullTabID);
+            this.target = d.querySelector(targetDivID);
+    
+            this.ht = 400; this.wd = 400;
+            this.x = 0; this.y = 0;
+            this.dx = 0; this.dy = 0;
+    
+            var resizeFn = this.resize.bind(this);
+            pullTab.addEventListener("mousedown", (evt) => {
+                this.x = evt.screenX;
+                this.y = evt.screenY;
+                d.body.addEventListener("mousemove", resizeFn);
+                d.body.addEventListener("mouseup", () => {
+                    d.body.removeEventListener("mousemove", resizeFn);
+                });
+            });
+        }
+    
+        resize(evt) {
+            this.dx = evt.screenX - this.x;
+            this.x = evt.screenX;
+            this.wd += this.dx;
+            if (this.wd >= 180) {this.target.style.width = this.wd + "px";}
+            else {}
+        };
+    }
+    new Resizehandler("#menu", "rsz");
+</script>
