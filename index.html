@@ -13,7 +13,7 @@
             overflow-x: hidden;
         }
         body {
-            overflow-y: scroll;
+            overflow-y: hidden;
             scrollbar-width: thin;
             scrollbar-color: #888 transparent;
         }
@@ -83,7 +83,13 @@
             position: relative;
             display: block;
             width: 100%;
+            height: 100%;
             margin: 10px;
+            margin-bottom: 0px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #888 transparent;
         }
         .sp_link {
             color: blueviolet;
@@ -125,11 +131,17 @@
             background: #555;
         }
     </style>
+
+    <meta property="og:title" content="POSSUMBLY THE BEST GAME EVER">
+    <meta property="og:description" content="the home page for POSSUMBLY THE BEST GAME EVER">
+    <meta property="og:image" content="embed.jpg">
+    <meta property="og:url" content="https://possum-game.github.io">
+
     <title>POSSUMBLY THE BEST GAME EVER</title>
     <link rel="icon" type="image/x-icon" href="media/fav.png">
 </head>
 <body>
-        <div class="menu" id="menu">
+        <div class="menu" id="menu" style="position:static">
             <div id="rsz"></div>
             <ul>
                 <li><a id="home" class="active" href="javascript:nav_handler('home')">Home</a></li>
@@ -209,7 +221,7 @@
             <source src="media/modern_possum.mp4" type="video/mp4">
             this video is not available in your browser.
         </video><br></div>
-    </div></center>`
+    </div></center><br>`
     }
     var c_page = document.getElementById('home')
     function nav_handler(button_pressed) {
